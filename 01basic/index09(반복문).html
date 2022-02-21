@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a =1;
+        // while(a<=10){
+        //     console.log(a);
+        //     a++;
+            
+        // }
+        // console.log(a)
+        
+        //for문
+
+        for(var i=1; i<=10; i++){
+            console.log(i)
+        }
+        //배열과 반복문
+        var arr= new Array();//Arraylist list =new Arraylist();
+
+        for(var i =1; i<=10; i++){
+            arr.push(i);//list.add(i)
+        }
+        console.log(arr)
+        // arr.sort(function(a,b){
+        //     if(a>b) return 1;
+        //     if(a==b) return 0;
+        //     if(a<b) return -1;
+        // });
+        // console.log(arr)
+        arr.sort(function(a,b){
+            return a-b;
+        });
+        console.log(arr)
+        //  var arr2= arr.sort();
+        //  console.log(arr)
+        // console.log(arr2)
+        for(var i =0; i<arr.length; i++){
+            console.log(arr[i]);
+        }
+
+
+    </script>
+    <script>
+        //2~9단 구구단
+        for(var i =2; i<10; i++){
+            document.write("<br>"+ i+"구구단"+"<br>")
+            for(var j=1; j<10; j++){
+                document.write(i+"x"+ j +"="+ i*j+"<br>")
+               
+          
+            }
+        }
+    </script>
+</body>
+</html>
