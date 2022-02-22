@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = fun01();
+        var b = fun02();
+        var c = fun03();
+        console.log(a)
+        console.log(b)
+        console.log(c)
+
+        function fun01(){
+            console.log("func01실행");
+        }
+         function fun02(){
+             console.log("func02 실행");
+             return "func02"; // 반환
+         }
+         function fun03(){
+             console.log("fun02 실행");
+              return "fun03"; //반환
+         }
+         //
+         //js 는 함수를 변수에 저장할수 있습니다.
+          var d = fun03;
+          console.log(d);
+          //함수의 선언이 위쪽에 있어야 d();를 선언 해서 값을 얻어올수있다
+          d();
+
+
+
+    </script>
+</body>
+</html>

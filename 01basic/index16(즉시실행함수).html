@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 페이지 로드 이후에 실행될 기능들을 정의 할수 있다.
+        function test01(){
+            console.log("첫번째로 동작")
+        }
+        function test02(){
+            console.log("두번재로 동작")
+        }
+        
+        //2.
+
+
+//즉시 실행함수
+        (function(a,b,c){
+            test01(); //.여기다가 적는 이유는 js는 함수를 묶어주는걸 좋아해서 함수에 같이 묶어주는걸 선호
+             test02();
+            console.log(a,b,c)
+            console.log("실행됨",a);
+        })(20,30,40);
+    </script>
+</body>
+</html>
