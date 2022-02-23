@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 선언
+        function doSomething(add){
+            console.log(add)
+            const result=add(1,2)
+            console.log(result)
+        } //function 부터 } 까지를 코드블럭이라고 하고 지금 상태에서는 
+        //선언만 한 상태이다.
+        function add(a, b){ //js 타입이 없는 언어여서 값은 변수로 접근할수있다. 
+            const sum = a+b;
+            return sum;
+        }
+        
+        
+        //함수 호출
+
+
+        doSomething(add); //()를 해줘야 console.log에 값이 나온다 
+       // console.log(doSomething)// 이렇게 답을 적으면 fucntion의 함수부분이 출력이 된다. 
+        // const result = add(1,2);
+        // console.log(result)
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //js는 함수를 객체처럼 사용할 수 있습니다.
+        function Person(name, age){
+
+            this.name = name; //name값을 생성될 때 지정
+            this.age = age;
+            this.addr ="서울시";
+            
+            this.info =function(){
+
+                return "이름:" + this.name + ", 나이:" + this.age + ", 주소:" +this.addr;
+            }
+        }
+       var P =  new Person("엄인국",20);
+       console.log(P.name);
+       console.log(P.age);
+       console.log(P.addr);
+       console.log(P.info());
+       
+    </script>
+    
+</body>
+</html>

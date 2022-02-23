@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //스크릡트에서 원격 어딘가에 있는 데이터를 가져오거나
+        //보낼수 있는데 
+        var date =[
+            {id:1, title: "h1", content:"뷁!"},
+            {id:2, title: "bye", content:"!!!!"},
+            {id:3, title: "hello", content:"헉!"},
+        ]
+        // console.log(date);
+        var str = JSON.stringify(date);
+        console.log(str);
+
+        //문자열  json형 으로 변환
+        var js =JSON.parse(str)
+        console.log(js)
+
+        // 단, 문자열을 JSON 형식으로 변결할 때 반드시 지켜야할 규칙이 있습니다.
+        //key,value 를 ""로 묶어줘야 합니다. 
+
+        var test=JSON.parse('{\"id\": \"aaa123\"}')
+        console.log(test);
+
+
+    </script>
+    
+</body>
+</html>

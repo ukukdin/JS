@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //js의 객체 표기법
+        var person = {name : '홍길동', age :20, inter: [1,2,3,]};
+        console.log(person);
+        //객체 안에 값을 사용하는 방법. 
+
+        // console.log(person.name);
+        // console.log(person.age);.............................................................
+        // console.log(person.inter);
+        // console.log(person.inter[0]);
+        // console.log(person.inter[1]);
+        // console.log(person.inter[2]);
+        // console.log(person.inter[3]);
+        //객체안에 값을 사용하는 방법 2nd
+
+       console.log(person["name"])
+       console.log(person["age"])
+       console.log(person["inter"])
+       console.log(person["inter"][0])
+       console.log(person["inter"][1])
+       console.log(person["inter"][2])
+       
+       console.log("------------------------------------   ");
+       var exam={math:80, kor:70,eng:90};
+       var park={name:"홍길자", exam:exam};
+       console.log(park);
+       console.log(park["name"]);
+       console.log(park.exam.math);
+       console.log(park["exam"]["kor"]);
+       console.log(exam["math"]); //exam을 한번에 나타내고싶으면 exam을 한번더 만들어서 실행
+
+       console.log("-----------------------------");
+       //배열안에 객체
+       var arr=[
+           {id:1,title:"aaa",content:"허허허"},
+           {id:2,title:"bbb",content:"허허허"},
+           {id:3,title:"ccc",content:"허허허"}
+       ];
+       console.log(arr);//배열에는 인덱스가 들어가는것임 키값이 아니고 
+       //특정 키값만 알고싶으면 배열 인덱스로 들어가서 거기서 [키값]을 주어져야합니다.
+       console.log(arr[0]["content"])
+       
+       console.log("---------------------");
+        //반복문을 이용해서 각각의 요소를 출력하고,
+        //subject는 중첩반복문으로 요소 전부를 출력하세요.
+        var arr2=[
+        {name:"홍길동",age:20,subject:["자바","jsp","spring"],birth:20000222},
+        {name:"이순신",age:30,subject:["css","script"],birth:19930324}
+        ];
+
+        console.log(arr2);
+        for(var i=0; i<arr2.length; i++){
+            //console.log(arr2[i])
+             console.log(arr2[i]["name"])
+             console.log(arr2[i]["age"])
+             // console.log(arr2[i]["subject"])
+             for(var j=0; j<arr2[i].subject.length; j++){
+                 console.log(arr2[i]["subject"][j])
+                }
+                console.log(arr2[i]["birth"])
+        }
+        // for(var a=0; a<arr2.length; a++){
+        //     for(var b=0; b<=arr2.length; b++){
+        //         console.log(arr2[a]["subject"][b]);
+        //     }
+        // }
+        
+        
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

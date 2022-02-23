@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function method1(){
+        }
+        console.log('안녕')
+
+        function method2(a){
+
+            return a;
+        }
+        const str=method2("나는 피리부는사나이");
+        console.log(str)
+        
+        function method03(a,b,c){
+            var cost = a+b+c;
+            return cost
+        }
+        var num=method03(1,2,3.154);
+        console.log(num);
+
+        function method04(a){
+            if(a%2==0){
+                return "짝수"
+            }else{
+              return  "홀수"
+            }
+        } console.log(method04(10))
+
+
+        function method5(a,b){
+           
+            for(var i=0; i<b; i++){
+                console.log(a)
+            }
+            return 
+        }
+        
+        var sc=method5("가나다",4)
+        console.log()
+      function maxNum(a,b){
+          if(a>b){
+              return a;
+          }else{
+              return b;
+          }
+      }
+        var max=maxNum(5,19)
+        console.log(max)
+
+        function method06(a,b,c,d){
+            
+            return a+b+c+d
+        }
+        var st=method06('f','u','c','k')
+        console.log(st)
+
+        function abs(a,b,c){
+
+            
+            return Math.abs(a,b,c)
+            
+            }
+            var result =abs(-10,-20,20)
+
+           console.log(result);
+    
+           function method7([a,b,c,d]){
+            console.log(a,b,c,d)
+            return a+b+c+d
+
+           }
+           var arr=method07[1,2,3,4]
+           arr[0]=100;
+           arr[1]=200;
+           arr[2]=2000;
+           arr[3]=2900;
+           console.log(arr)
+    </script>
+    
+</body>
+</html>

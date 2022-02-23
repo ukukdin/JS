@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button"  id="btn">기본이벤트</button>
+
+    <script>
+//     기본이벤트 방식= 태그를 취득해와서 직접 이벤트를 지정하는 방식
+        var btn =document.getElementById("btn");//id가 btn인 태그를 선택합니다.
+        btn.addEventListener("click", func)
+        //func 자리에 ->( funcition(){}) 들어갈수있슴 그리고 on키워드는 제외합니다.
+      
+        function func(){
+        alert("기본이벤트");
+        
+        }
+     
+
+    </script>
+
+</body>
+</html>
