@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="title">단어를 선택하세요</p>
+    <select  id="selector" onclick="a(this)">
+        <option value="1">선택</option>
+        <option value="2">hello</option>
+        <option value="3">안녕하세요</option>
+        <option value="4" >듕귁에달아</option>
+    </select>
+    <script>
+            var sc=document.getElementById("title")
+            var ss=document.getElementById("selector")
+       /*ss.onclick=*/ function a(){
+            if(ss.value==1){
+             sc.innerHTML="단어를 선택하세요."
+            }else if(ss.value=="2"){
+             sc.innerHTML="영어입니다."
+            }else if(ss.value=="3"){
+            sc.innerHTML="한국어입니다."
+
+            }else if(ss.value=="4"){
+            sc.innerHTML="조선말입니다."
+
+            }
+        }
+    </script>
+    <!-- <script>
+        var selector=document.getElementById("selector")
+        var title=document.getElementById("title")
+        selector.onchange=function(){
+            //option은 select태그의 value입니다.
+            //console.log(selector.vaule);
+            if(selector.value=="hello"){
+               title.innerHTML="영어입니다."
+            }else if(selector.value=="안녕하세요"){
+               title.innerHTML="한국어입니다."
+
+            }else if(selector.value=="듕귁에달아"){
+                title.innerHTML="조선말입니다."
+
+            }else{
+
+            }
+        }
+    </script> -->
+</body>
+</html>
