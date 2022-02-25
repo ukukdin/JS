@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="quiz03.css">
     
 </head>
-<body class="color">
+<body>
     <article>
         <div  class="box">
             <h3>style 속성 활용하기</h3>
@@ -62,7 +62,8 @@
    </section>
    <script>
     var dark = document.querySelector(".dark")
-    var color = document.querySelector(".color")
+    var color = document.querySelector("body")
+    //or document.body
     var text =document.querySelector(".box")
     var text1 =document.querySelector(".left > div > p")
     var light=document.querySelector(".light")
@@ -78,7 +79,17 @@
     }
 
 </script>
-
+<!-- <script>선생님이 한것임
+    var dark = document.getElementById("dark")
+    dark.onclick=function(){
+        var body=document.body;
+        body.style.backgroundColor="black"
+        var list =document.querySelectorAll("h3,a,p");//결과는 배열
+        for(var i=0; i<list.length; i++){
+            list[i].style.color="white"
+        }
+    }
+</script> -->
     
 </body>
 </html>
