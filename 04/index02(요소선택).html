@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="check1">퀴리셀렉터</button>
+    <div class="box1">
+        <ul>
+            <li>안녕</li>
+            <li>헬로</li>
+            <li>곤니치와</li>
+        </ul>
+    </div>
+    <script>
+        var check1 = document.querySelector("#check1");//css문법으로 선택
+        check1.onclick = function () {
+            var box1 = document.querySelector(".box1>ul>li");//css 문법
+            console.log(box1);
+        }
+        var list = document.querySelectorAll(".box1>ul>li");
+        for (var i = 0; i < list.length; i++);
+        console.log(list)
+
+    </script>
+
+
+    <hr>
+
+    <h3>간단한 실습</h3>
+
+    <input type="checkbox" name="test" value="1">1
+    <input type="checkbox" name="test" value="2">2
+    <input type="checkbox" name="test" value="3">3
+    <input type="checkbox" name="test" value="4">4
+    <button class="btn">체크박스선택버튼</button>
+
+    <script>
+        //버튼 클릭시 name'text' 인 태그를 쿼리셀릭트올로 선택하세ㅛㅇ
+       var btn=document.querySelector(".btn")
+       btn.onclick=function(){
+       console.log(btn)
+       
+       var name=document.querySelectorAll("input[name='test']");
+       console.log(name);
+       
+       }
+        
+     
+
+    </script>
+</body>
+
+</html>
