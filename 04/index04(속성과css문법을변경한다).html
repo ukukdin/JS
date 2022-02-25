@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h3>요소를 얻어서 속성 변경하기</h3>
+    <select class="select" >
+        <option value="1.jpg">봄</option>
+        <option value="2.jpg">여름</option>
+        <option value="3.jpg">가을</option>
+        <option value="4.jpg">겨울</option>
+    </select>
+    <button class="btn1">이미지바꾸기</button>
+    <br>
+    <input class="input"  type="color">
+    <button class="btn2">색상변경하기</button>
+    <br>
+    <img src="1.jpg" width="500px" class="img" style="border: 5px solid #000">
+</section>
+    <script>
+        var select =document.querySelector(".select")
+        var img=document.querySelector(".img")
+        var btn1=document.querySelector(".btn1")
+        btn1.onclick=function(){
+            /* 태그의 일반속성에 접근
+            console.log(select.value)
+            console.log(img.src) */
+            img.src=select.value
+            console.log(btn1)
+           
+        }
+        var style =document.querySelector(".img")
+        var input=document.querySelector(".input")
+        var btn2=document.querySelector(".btn2")
+        btn2.onclick=function(){
+            /* 캐그의 스타일속성에 접근
+            console.log(input.value) */
+            img.style.borderColor=input.value//보더색상변경
+
+        }
+
+            
+        
+    </script>
+</body>
+</html>

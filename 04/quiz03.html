@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <form>
+     <label>아이디</label>
+        <input  class="box" type="text" name="id" id="id"  ><br>
+        <span class="idMsg"></span><br>
+        <label>비밀번호</label>
+     <input class="pw" type="password" name="pw" id="pw" ><br>
+     
+        <span class="pwMsg"></span><br>
+    </form>
+</section>
+  
+  <script>
+      var input =document.querySelector(".box")
+      var idMsg=document.querySelector(".idMsg")
+
+      input.onkeyup=function(){
+       
+        //   console.log(input)
+        //   console.log(input.value.length)
+          if(input.value.length<4){
+            idMsg.innerHTML="4글자 이상적어주세요"
+            input.style.border="2px solid red"
+          }else{
+              idMsg.innerHTML=" "
+              input.style.border="2px soild yellow"
+          }
+          
+      }
+   
+   var type=document.querySelector(".pw")
+   var pwMsg=document.querySelector(".pwMsg")
+   type.onkeyup=function(){
+       if(type.value.length<8){
+           pwMsg.innerHTML="8글자 이상적어주세요"
+           type.style.border="2px solid green"
+       }else{
+           pwMsg.innerHTML=" "
+          type.style.border="2px solid black"
+       }
+   }
+  </script>
+
+
+</body>
+</html>
+
+
+
+<!-- 
+//   var name = document.querySelector(".box")
+//   var text =document.querySelector(".type")
+//   var idMsg = document.querySelector(".idMsg")
+//   name.onkeyup=function(){
+//       console.log(name.value)
+//       console.log(text)
+//       if(name.value.length<4){
+//           idMsg.innerHTML="아이디4글자이상"
+
+//       }
+//   } -->
