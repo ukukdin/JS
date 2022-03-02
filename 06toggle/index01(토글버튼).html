@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>토글버튼 - 클래스를 이용해서 하나의 버튼에 여러기능을 붙여주는 형태</h3>
+    
+    <button class="toggle" id="toggle">토글버튼</button>
+
+    <script>
+        var toggle=document.getElementById("toggle");
+        toggle.onclick=function(){
+            if(toggle.className =="toggle"){
+                toggle.innerHTML="변경!"
+                toggle.className="change"//이름을변경
+            }else{
+                toggle.innerHTML="토글버튼"
+                toggle.className="toggle"
+            }
+        }
+    </script>
+    <hr>
+    <h3>기존의 클래스이름을 유지하고 토글 클래스를 추가하는형태</h3>
+    <button type="button" class="btn btnx aaa" id="toggle2">토글버튼</button>
+
+    <script>
+
+        var toggle2=document.getElementById("toggle2")
+        toggle2.onclick=function(){
+            if(toggle2.classList.contains("aaa")){
+                toggle2.innerHTML="변경!"
+                toggle2.classList.remove("aaa");//aaa클래스삭제
+            }else{
+                toggle2.innerHTML="토글버튼"
+                toggle2.classList.add("aaa");
+            }
+        }
+        //토글은 하나의 버튼으로 여러가지 일들을 하는것
+        //클래스를 이용해서 추가하고 제거하는 형태
+        //단일 클래스라면 간단하게 위에처럼 클래스이름이라는것으로 값을 직접 지정가능
+        //클래스가 여러개라면 단순한 클래스 내임을 사용하기보단 클래스 list속성을 사용해서 클래스를 추가하고 제거하는방법
+        //add, remove, contatain(확인하기 true or false)를 list클래스에 사용한다 
+        
+    </script>
+</body>
+</html>

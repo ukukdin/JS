@@ -17,24 +17,30 @@
     <!-- 2. 다음 버튼을 클릭했을 때 input태그의 공백여부, 체크여부를 확인하세요-->
     ID:<input type="input" id="id">
     기억하기<input type="checkbox" id="remember">
-    <button type="button" onclick="ck(this)" id="check2">확인</button>
+    <button type="button"  id="check2">확인</button>
     
     <script>
       function btn(x){
           alert( x.value + "조항을 클릭하셨습니다.")
           
       }
-      var check2 = document.getElementById("ckeck2")
-      check2.addEventListener("click",function(){
+      var check2 = document.getElementById("check2")
+      check2.addEventListener("click",key)
+      
+      function key(){
 
-        var id =document.getElementById("id");
+          var id =document.getElementById("id");
           var remember=document.getElementById("remember")
           console.log(id.value)
           console.log(remember.checked)
      
 
           console.log("실행됨");
-      })
+   
+      }
+      
+     
+
       
     //   function ck(a){
     //     console.log("아이디값:"+ )

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="btn btn-default" id="btn">클래스속성제어하기</button>
+    <script>
+        var btn=document.getElementById("btn");
+        // console.log(btn.type)
+        // console.log(btn.id)
+        console.log(btn.className)
+        console.log(btn.classList)
+        console.dir(btn)
+        //btn.className="xxxxx";
+        btn.classList.add("xxxxx")
+        btn.classList.remove("btn-default")
+        btn.classList.contains("btn")
+        console.log(btn.classList.contains("btn"))
+
+        btn.classList.toggle("aaa")//값이 없으면 추가해주고 있으면 제거해주는 기능
+        btn.classList.toggle("aaa")//값이 있으면 삭제 없으면 추가
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="add">추가하기</button>
+    <button type="button" id="rev">삭제하기</button>
+    
+    <ul class="list">
+        <!-- <li><a href="#">1.</a></li> -->
+
+    </ul>
+    <script>
+
+        var count=0;//전역변수
+       var add = document.getElementById("add");
+       add.onclick=function(){
+
+
+          var li =document.createElement("li");//만들 태그를 문자열의 형태로 적음
+          var a = document.createElement("a");
+          var text = document.createTextNode(++count +".문자열생성");
+         
+        a.href = "http://www.naver.com"; //a의 속성을 추가
+
+          li.appendChild(a); //li부모가  자식으로 a 추가
+          a.appendChild(text);//a자식으로 text추가
+
+          document.querySelector(".list").appendChild(li);
+         
+       }
+   
+       //삭제 기능
+       var rev=document.getElementById("rev")
+       rev.onclick=function(){
+           var list =  document.querySelector(".list")
+       console.log(list.children);//엘리먼트의 형태만 선택
+       console.log(list.childNodes);  //text 주석, 엘리먼트를 모두 선택
+
+         // console.dir(list)//콘솔은 콘솔창의 로그였는데 기능들이 다양해지면
+        //    console.dir에 태그를 찍으면 현재 리스트 태그를 선택했을때 사용할수있는 속성들이 나온다. on이라고 붙은거는 다 이벤트이다. .
+        //리스트에 on이벤트를 다 붙일수 있다는 뜻이다. 
+
+        //부모태그. removechild(자식요소)
+       list.removeChild(list.children[list.children.length-1])
+        
+       
+
+       }
+   
+   
+   
+   </script>
+</body>
+</html>

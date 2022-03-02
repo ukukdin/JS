@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>할일 목록 만들어보기</h3>
+
+    <form class="nameForm">
+        <h3 class="nameTitle"></h3>
+        <input type="text"  placeholder="이름을 입력하세요">
+        <button type="button" id="btn">확인</button>
+
+    </form>
+    <form class="todoForm">
+        <input type="text"  placeholder="할일을 작성하세요">
+        <button type="button" id="btn2">확인</button>
+    </form>
+    <ul class="todoList"></ul>
+
+    <script>
+       var nameForm=document.querySelector(".nameForm")
+       var nameTitle = nameForm.querySelector(".nameTitle");
+       var text =nameForm.querySelector("input");
+        var btn=nameForm.querySelector("button");
+        btn.addEventListener("click",key);
+        
+        function key(){
+
+            nameTitle.innerHTML=text.value + " 님 안녕하세요"
+            text.style.display='none';
+            btn.style.display='none'
+            
+             console.log(name)
+             console.log(text)
+               
+        };
+           
+          
+            
+        
+  
+
+    
+          var todoList=document.querySelector(".todoList")
+          var todoForm=document.querySelector(".todoForm")
+          var text2 = todoForm.querySelector("input")
+          var btn2=todoForm.querySelector("button")
+          
+         btn2.addEventListener("click", key2)
+         function key2(){
+
+           var text = text2.value;//값
+        //    text2.value=" ";
+            //btn 생성
+            var btn3=document.createElement("button");
+            btn3.innerHTML="X";
+            var li = document.createElement("li");
+          
+          todoList.appendChild(li)
+        //   li.appendChild(tex  t.value)
+         li.innerHTML=text +" "
+         li.appendChild(btn3)
+          console.log(li)
+          console.log(text)
+          
+            // text.appendChild(li)
+            // btn3.appendChild(text)
+            // console.log(text)
+            
+         }
+        
+            
+        
+    </script>
+</body>
+</html>
