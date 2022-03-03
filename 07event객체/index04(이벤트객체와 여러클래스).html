@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>이벤트 위임과 여러 클래스</h3>
+    <!-- 1. 인라인방식
+         2. -->
+    <section>
+        <div class="list">
+            <div>
+                <span> 홍길동 </span>
+                <button type=" button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        <div>
+            <span>김길동</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        <div>
+            <span>감길동</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        <div>
+            <span>정길동</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        </div>
+
+    </section>
+
+    <script>
+        var list = document.querySelector(".list");
+        list.onclick = function(e) {
+            //e.target.previousElementSibling.remove();
+            console.log(e.target);
+            console.log(e.target.className);
+            console.log(e.target.classList);//여러 클래스니깐 클래스list로 접근
+            console.log(e.target.classList.contains("sel"))
+            
+            if(e.target.classList.contains("sel")){
+                e.target.previousElementSibling.style.color="red"
+                
+
+            }else if(e.target.classList.contains("del")){
+                e.target.parentElement.remove()
+            }
+        }
+    </script>
+
+</body>
+
+</html>

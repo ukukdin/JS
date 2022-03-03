@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul > li{display: inline-block;}
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="parent">
+            <li ><img src="img/1.jpg"   alt="봄" width="100"></li>
+            <li ><img src="img/2.jpg"   alt="여름" width="100"></li>
+            <li ><img src="img/3.jpg"   alt="가을" width="100"></li>
+            <li ><img src="img/4.jpg"   alt="겨울" width="100"></li>
+        </ul>
+        결과:
+        <div class="img1">
+            <img src="img/1.jpg" width="400" alt="대표이미지">
+        </div>
+    </div>
+   
+    <script>
+        var parent=document.querySelector(".parent")
+        var img1=document.querySelector(".img1 > img")
+        parent.onclick=function(e){
+           
+            if(event.target.tageName != "IMG")return;
+          
+            img1.src= e.target.src;
+            
+        }
+    </script>
+</body>
+</html>

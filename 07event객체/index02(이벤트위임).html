@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>이벤트위임 방식으로 처리하기</h3>
+    <ul class="parent">
+        <li class="list">1.홍홍홍</li>
+        <li class="list">2.김길동</li>
+        <li class="list">3.둘리</li>
+        <li class="list">4.박찬호</li>
+        <li class="list">5.신사임당</li>
+    </ul>
+    선택된 태그값:
+    <p class="result">
+        
+    </p>
+    <script>
+        var result = document.querySelector(".result")
+        var parent = document.querySelector(".parent");
+        parent.onclick=function(){
+
+
+
+            //정확히 이벤트가 li에서만 동작 되로록 만들어야한다.
+            
+            console.dir(event.target)
+
+
+            // console.log(event.target)//이벤트가 적용된 태그
+            // console.log(event.currentTarget)//이벤트가 실제로 걸려있는태그
+           result.innerHTML= event.target.innerHTML;
+
+
+        }
+    </script>
+</body>
+</html>

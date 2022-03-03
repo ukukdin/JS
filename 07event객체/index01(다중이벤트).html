@@ -17,18 +17,23 @@
     </ul>
     선택된 태그값:
     <p class="result">
-
+        
     </p>
     <script>
+        var result=document.querySelector(".result")
         var list=document.querySelectorAll(".list");
         // console.log(list);
         // list[0].onclick=function(){
         //     console.log(111)
         for(var i=0; i<list.length; i++){
-            list[i].onclick=function(){
+            list[i].onclick=function(e){
                //이벤트가 발생되면, 이벤트 함수에 arguments에 event객체를 넣어주게 되어있다.
                 //console.log(arguments)
-                console.log(event.target);
+                //console.log(event.target);
+                if(event.target != "LI"){
+                    return;
+                }
+              result.innerHTML= e.target.innerHTML;
             }
         }
         
