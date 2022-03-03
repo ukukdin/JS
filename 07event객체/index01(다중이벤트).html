@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li class="list">1.홍홍홍</li>
+        <li class="list">2.김길동</li>
+        <li class="list">3.둘리</li>
+        <li class="list">4.박찬호</li>
+        <li class="list">5.신사임당</li>
+    </ul>
+    선택된 태그값:
+    <p class="result">
+
+    </p>
+    <script>
+        var list=document.querySelectorAll(".list");
+        // console.log(list);
+        // list[0].onclick=function(){
+        //     console.log(111)
+        for(var i=0; i<list.length; i++){
+            list[i].onclick=function(){
+               //이벤트가 발생되면, 이벤트 함수에 arguments에 event객체를 넣어주게 되어있다.
+                //console.log(arguments)
+                console.log(event.target);
+            }
+        }
+        
+    </script>
+</body>
+</html>
