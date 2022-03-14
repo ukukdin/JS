@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.required=true pattern=정규식표현
+        2.
+     -->
+    <form action="#" name="joinForm" >
+
+        아이디: <input type="text" name="id"><br>
+        비밀번호: <input type="password" name="pw">
+        <br>지역: 
+        <select name="region" >
+            <option>선택</option>
+            <option>서울</option>
+            <option>경기</option>
+        </select>
+        <br>
+        자기소개:<br>
+        <textarea name="intro" cols="50" rows="5"></textarea>
+        <br>전공<br>
+        <input type="checkbox" name="inter">자바 
+        <input type="checkbox" name="inter">제이에스 
+        <input type="checkbox" name="inter">데이터베이스
+    
+        <button type="button" class="btn">가입</button>
+    
+    </form>
+    <script>
+        var btn=document.querySelector(".btn")
+        btn.onclick=function(){
+            // event.preventDefault();//submit버튼의 중단
+            /*  폼객체는 document의 하위 객체이기때문에 
+            form 에 name 속성으로 접근할수있습니다 (document.폼이름.이름).*/
+        //    console.log ( document.joinForm.id);
+        //    console.log ( document.joinForm.pw);
+           if(document.joinForm.id.value == ''){
+               alert("아이디는필수입니다.")
+               document.joinForm.focus();//태그에 포커스
+               return;//함수종료
+           }else if(document.joinForm.id.value.length<4){
+
+           }else if(document.joinForm.pw.value ==''){
+               alert("비밀번호는필수입니다.")
+               document.joinForm.pw.focus();
+               return;
+           }else if(document.joinForm.pw.value.length<8){
+            alert("8글자 이상 적어주세요")
+           }else if(document.joinForm.region.value =='선택'){
+               alert("지역을 선택해주세요")
+               return;
+           }else {
+               var inter = document.getElementsByName("inter");
+                var bool=true;
+               for(var i=0; i<inter.length; i++){
+                   if(inter[i].checked ){
+                    bool=false;
+                    break;//반복문종료
+                   }
+               }
+               if(bool){
+                   alert("전공은필수입니다.");
+                   return;
+               }else if(document.joinForm.intro.value ==''){
+               alert("내용을 적어주세요")
+               return;
+           }
+           //폼태그(js로 폼전송)
+           document.joinForm.submit();
+        }
+        }
+    </script>
+</body>
+</html>

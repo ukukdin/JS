@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            } to {
+                opacity: 1;
+            }
+        }
+        .bgImg {
+            position: absolute;  
+             /* 바디기준으로떠오른다 */
+             top: 0;
+             left: 0;
+             z-index: -1;/*가장뒤로*/
+             animation: fadeIn .5s linear;
+        }
+
+        .clock h2{
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body> 
+    <div class="clock">
+        <h2>00:00:00</h2>
+    </div>
+    <script>
+        function createTime(){
+            var date = new Date(); //현재시간
+            var hr = date.getHours();
+            var mins = date.getMinutes();
+            var sec = date.getSeconds();
+            
+            var time = (hr < 10? "0"+ hr : hr) +":"+ 
+            (mins < 10 ? "0"+mins : mins)+":" +
+            ( sec < 10 ? "0"+sec : sec);
+            var h2= document.querySelector(".clock > h2");
+            h2.innerHTML=time;
+            console.log(time)
+            
+        }
+        //배경화면
+        var count=0;
+        function changeBack(){
+            var img =document.createElement("img");
+            img.src ="imgs/"+ ++count +".jpg"
+            img.classList.add("bgImg"); //애니메이션 클래스
+            
+            document.body.appendChild(img);
+            
+            if(num == 4) count = 0;
+        
+        }
+
+
+
+
+        (function(){
+            createTime();//바로시작
+            setInterval(createTime,1000);//이후 1초마다 시작
+            
+            changeBack();//배경화면
+            setInterval(changeBack,10000);
+        })();
+    </script>
+</body>
+</html>

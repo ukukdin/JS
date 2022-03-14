@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+
+<body>
+
+<h3>최신 클릭 목록</h3>
+<div class="cartList">
+    
+
+</div>
+    <!-- 로컬 스토리지 값을 가지고 온다. 
+    2.가지고 온 값을 이미지로 생성해서 
+    carList아래에 appendchild로 추가한다.  -->
+<script>
+   var cartList=document.querySelector(".cartList");
+   var  like =  JSON.parse( localStorage.getItem("like"))
+   console.log(like)
+
+
+   
+   for (var i = 0; i < like.length; i++) {
+            var img=document.createElement("img")
+            img.src = like[i];
+            img.style.width="300px";
+           
+            cartList.appendChild(img);
+
+
+        }
+/*  if(like !=null){
+    for(var i=0; i<like.length; i++){
+        var img =document.createElement("img")
+        img.src=like[i];
+        img.style.width="300px";
+        cartList.appendChild(img);
+    
+    }
+}else{
+    var div=document.creatElement("div");
+    div.innerHTML="최신에 확인한 목록이 없습니다. "
+    cartList.appendChild(img);
+}
+*/
+   
+  
+   
+   
+</script>
+</body>
+
+</html>

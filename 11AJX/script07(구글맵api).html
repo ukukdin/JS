@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+#map {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+</style>
+
+</head>
+<body>
+
+    <!-- 맵을 그리는곳 -->
+    <div id="map"></div>
+    <script>
+    let map;
+
+function initMap() {
+
+
+    
+    var myLang = {lat :37.498095 , lng:127.027610 }
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: myLang,
+    zoom: 16,
+  });
+  new google.maps.Marker({
+      position: myLang,
+      map,
+      title: "Hello World!",
+    });
+}
+
+</script>
+    <!-- 1.sdk 로드 (API_key 설정) -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsPzmK0imbxszclImSxMoItyZfIs4ihWI&callback=initMap&v=weekly"
+      async
+    ></script>
+</body>
+</html>

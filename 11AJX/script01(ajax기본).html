@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="ajax()">에이젝스 요청</button>
+
+    <script>
+    //    function ajax(){
+    //         fetch("hi.text").then(function(response){
+    //              response.text().then (function(text){
+    //                 alert(text);
+    //              })
+    //         })
+    //     };
+     //   --------------------------------------------------------
+       // fetch를 사용하면 promise객체를 받는다. (promise에는 요청에 대한 상태정보가 있습니다.);
+       // pending은 대기중
+       // fullfilled-요청성공
+       // rejected -요청실패
+        //promise안에 then함수안에 콜백함수를 넣으면, 콜백함수의 첫번째 매개변수에 응답에 대한 내용을 넣어줍니다.
+        var pro = fetch("hi.text");
+        pro.then(function(response){
+            console.log(response)
+        });     
+      // 단,then()은 시간이 오래 걸릴 수 있기 때문에 비동기적으로 실행됩니다.
+       //비동기적 1->3->2
+        // console.log(1)
+        // fetch("hi.text").then(function(response){
+        // console.log(2)
+        // })//위에꺼를 간단하게 만들었습.
+        // console.log(3)
+        // console.log(31)
+        // console.log(32)
+       
+        
+    //    fetch("hi.text").then(function(response){
+    //     console.log(response);
+    //    /* if(response.status == "404"){
+    //         alert("요청에 실패했습니다.")
+    //     }else{
+    //         alert("")
+    //     }*/
+    //     console.log(response.text());//text()는 문자로 변환시키겠다. 이 결과는 promise
+    //     response.text().then(function(data){
+    //         console.log(data)
+    //     })
+    // })
+
+       
+
+
+
+    </script>
+
+</body>
+</html>

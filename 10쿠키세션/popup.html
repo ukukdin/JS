@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- 쿠키 js -->
+
+      <script src="popup.js"> </script>
+</head>
+<body>
+  <h3>내용.......</h3>
+
+  오늘 하루 이창을 열지 않기
+  <input type="checkbox" >
+  <script>
+      /* checkbox가 체크되었다면 
+      쿠키를 생성하고 window.close()팝업창을 닫으면됩니다. */
+      var box = document.querySelector("input[type='checkbox']");
+      box.onclick=function(){
+        if(this.checked){
+          createCookie("mainPopup");
+          windlow.close();
+        }
+      }
+  </script>
+</body>
+</html>

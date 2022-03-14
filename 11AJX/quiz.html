@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="ck">다음버튼</button>
+    
+    <script>
+         var dayNum=1;
+            var ck = document.querySelector(".ck");
+            ck.onclick=function(){
+               
+
+                    getAjax(dayNum);
+                    dayNum++;
+                
+            }
+        function getAjax(day){
+            var end = day*20;
+            var start = end-19;
+            fetch("http://openapi.seoul.go.kr:8088/6644644c59786b6638386b51435941/json/upisEtcProj/"+start+"/"+end).then(function(response){
+                if(response.status !=200){
+                    alert("요청에 실패하셨습니다.")
+                }else{
+                    return response.json();
+                }
+
+            }).then(function(data){
+                console.log(data)
+                
+                var sn = data.upisEtcProj.row;
+                console.log(sn);
+                 
+                 for(var i =0; i<sn.length; i++){
+                     sn[i].RECORDCODE;
+                     sn[i].PROJCODE;
+                     
+                 }
+            });
+
+
+
+        }
+           
+        
+    </script>
+</body>
+</html>

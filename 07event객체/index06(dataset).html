@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dateset은 태그에 date-이름 으로 선언하고 데이터를 저장하는곳입니다.
+    반드시 문자열의 형태여야합니다. -->
+    <ul class="list">
+        <li><a href="#" data-userInfo='{"id":"1","age":"20"}'>김연어</a></li>
+        <li><a href="#" data-userInfo='{"id":"1","age":"30"}'>김참치</a></li>
+        <li><a href="#" data-userInfo='{"id":"1","age":"40"}'>오징어</a></li>
+        <li><a href="#" data-userInfo='{"id":"1","age":"50"}'>고등어</a></li>
+    </ul> 
+    <script>
+      var list = document.querySelector(".list")
+      list.onclick=function(){
+
+          event.preventDefault(); //고유이벤트 중단
+          if(event.target.tagName !="A")return;
+
+        //    console.dir(event.target)
+        //   //dataset이름으로 값을 찾을수 있고 - 이름이 사용할수 있는 이름이됩니다.
+        //   console.log(event.target.dataset.userinfo);
+           var dd = JSON.parse(data);
+           console.log(dd);
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>로컬스토리지를 이용해서 마지막에 클릭한 2가지 정보만 저장</h3>
+   
+  <div class="list">
+      <img src="imgs/1.jpg" value="1" width="300">
+      <img src="imgs/2.jpg" value="2" width="300">
+      <img src="imgs/3.jpg" value="3" width="300">
+      <img src="imgs/4.jpg" value="4" width="300">
+  </div>
+  <script>
+      
+      
+     /* 배열를 이용해서 처리합니다. push(),shift()를 이용하여 사용합니다. */
+    var list = document.querySelector(".list")
+    list.onclick=function(x){
+        console.log(x.target)
+
+       if(x.target.tagName != "IMG") return;
+       //함수호출
+        setStorage(x.target)
+    }
+    var arr = new Array();
+    function setStorage(img){
+        var like = localStorage.getItem("like");
+      
+         if(localStorage.getItem("like") !=null){
+           arr=JSON.parse(  localStorage.getItem("like"));
+            
+         }
+         //길이가 2이상이면 앞에서 제거
+         if(arr.length >= 2){
+             arr.shift();
+         }
+         arr.push(img.src);
+         localStorage.setItem("like",JSON.stringify(arr))
+    }
+    
+    
+    
+  </script>
+    
+</body>
+</html>
